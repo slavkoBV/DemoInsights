@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  AWSAccountId:
+    Type: String
+    Description: AWS Account ID
+  AWSECRAdminUser:
+    Type: String
+    Description: Admin user who can
+  AWSECRRepoName:
+    Type: String
+    Description: ECR Repository name
+  PrefixName:
+    Type: String
+    Description: Prefix of all the resources
+
+Resources:
+  MyRepository:
+    Type: "AWS::ECR::Repository"
+    Properties:
+      RepositoryName: !Join ["-", [!Ref PrefixName, "repo"]]
+
+
+Outputs:
+  MyECRArn:
+    Description: ECR Repository ARN
+    Value: !Join
+      - ''
+      - - !GetAtt
+          - MyRepository
+          - Arn

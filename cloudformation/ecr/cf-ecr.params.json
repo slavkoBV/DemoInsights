@@ -1,0 +1,18 @@
+[
+  {
+    "ParameterKey": "AWSAccountId",
+    "ParameterValue": "YOUR AWS ACCOUNT ID"
+  },
+  {
+    "ParameterKey": "AWSECRAdminUser",
+    "ParameterValue": "AWS ADMIN USER NAME"
+  },
+  {
+    "ParameterKey": "PrefixName",
+    "ParameterValue": "my"
+  },
+  {
+    "ParameterKey": "AWSECRRepoName",
+    "ParameterValue": "PREFERRED ECR repo NAME"
+  }
+]

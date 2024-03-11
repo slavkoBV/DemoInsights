@@ -1,0 +1,18 @@
+[
+  {
+    "ParameterKey": "AWSAccountId",
+    "ParameterValue": "YOUR AWS ACCOUNT ID"
+  },
+  {
+    "ParameterKey": "PrefixName",
+    "ParameterValue": "my"
+  },
+  {
+    "ParameterKey": "SubnetID",
+    "ParameterValue": "subnet-SUBNET ID"
+  },
+  {
+    "ParameterKey": "DataBucket",
+    "ParameterValue": "PREFERRED BUCKET NAME"
+  }
+]
