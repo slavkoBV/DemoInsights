@@ -45,7 +45,7 @@ class InsightService:
     @staticmethod
     def get_insights(text: str, trackers: list[str]) -> InsightsResponseSchema:
         matcher = PhraseMatcher(NLP.vocab)
-        patterns = [NLP.make_doc(text) for text in trackers]
+        patterns = [NLP.make_doc(tracker) for tracker in trackers]
         matcher.add("Insights", patterns)
 
         doc = NLP(text)
