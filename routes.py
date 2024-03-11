@@ -8,20 +8,22 @@ from util import Cache
 from schemas import InsightsRequestSchema, InsightsResponseSchema
 
 
-TRANSCRIPTION_BUCKET = os.environ.get('TRANSCRIPTION_BUCKET', "test-bucket")
+TRANSCRIPTION_BUCKET = os.environ.get("TRANSCRIPTION_BUCKET", "test-bucket")
 router = APIRouter(prefix="/insights")
 
 cache = Cache()
 
 
-@router.post('/')
+@router.post("/")
 def retrieve_insights(data: InsightsRequestSchema) -> InsightsResponseSchema:
     input_phrases = data.trackers
     file_path = data.interaction_url
 
-    service = InsightService(transcribe_client=TranscribeClient(TRANSCRIPTION_BUCKET),
-                             s3_client=S3Client(),
-                             cache=cache)
+    service = InsightService(
+        transcribe_client=TranscribeClient(TRANSCRIPTION_BUCKET),
+        s3_client=S3Client(),
+        cache=cache,
+    )
 
     job_name = service.transcribe_audio_file(file_path=file_path)
     insights = InsightsResponseSchema()

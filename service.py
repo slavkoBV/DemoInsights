@@ -13,8 +13,9 @@ NLP = spacy.load("en_core_web_sm")
 
 
 class InsightService:
-
-    def __init__(self, transcribe_client: TranscribeClient, s3_client: S3Client, cache: Cache) -> None:
+    def __init__(
+        self, transcribe_client: TranscribeClient, s3_client: S3Client, cache: Cache
+    ) -> None:
         self.transcribe_client = transcribe_client
         self.s3_client = s3_client
         self.cache = cache
@@ -34,10 +35,12 @@ class InsightService:
         return path is not None
 
     def get_transcriptions(self, job_name: str, bucket_name: str):
-        file_name = f'{job_name}.json'
-        file_data = self.s3_client.read_file(bucket_name=bucket_name, filename=file_name)
+        file_name = f"{job_name}.json"
+        file_data = self.s3_client.read_file(
+            bucket_name=bucket_name, filename=file_name
+        )
         data = json.loads(file_data)
-        return [item['transcript'] for item in data['results']['transcripts']]
+        return [item["transcript"] for item in data["results"]["transcripts"]]
 
     @staticmethod
     def get_insights(text: str, trackers: list[str]) -> InsightsResponseSchema:

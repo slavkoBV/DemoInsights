@@ -27,9 +27,10 @@ def s3(aws_credentials):
 
 @fixture(scope="function")
 def create_bucket(s3):
-    s3.create_bucket(Bucket=TRANSCRIPTION_BUCKET, CreateBucketConfiguration={
-        'LocationConstraint': 'eu-central-1'
-    },)
+    s3.create_bucket(
+        Bucket=TRANSCRIPTION_BUCKET,
+        CreateBucketConfiguration={"LocationConstraint": "eu-central-1"},
+    )
 
 
 @fixture
