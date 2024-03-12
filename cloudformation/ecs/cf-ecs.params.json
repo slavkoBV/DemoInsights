@@ -14,5 +14,9 @@
   {
     "ParameterKey": "DataBucket",
     "ParameterValue": "PREFERRED BUCKET NAME"
+  },
+  {
+    "ParameterKey": "AWSECRRepoName",
+    "ParameterValue": "ECR repo NAME"
   }
 ]
