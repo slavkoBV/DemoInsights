@@ -19,7 +19,7 @@ To run it, you have to have AWS account
 
 ### To deploy on AWS ECS Fargate
 1. Build docker image locally `make build` **Note.** In case you use MacOS, build docker image with next command:
-`build-macos`
+`make build-macos`
 2. Specify your AWS Account ID and preferred name of the repo in `/DemoInsights/cloudformation/ecr/cf-ecr.params.json`
 3. You should be login into AWS CLI
 4. Create AWS ECR repo `sh cf-ecr.deploy.sh` from `/DemoInsights/cloudformation/ecr`
