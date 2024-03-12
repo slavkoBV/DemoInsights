@@ -2,6 +2,9 @@
 build:
 	docker-compose build
 
+build-macos:
+	docker buildx build --platform linux/amd64 -t demoinsights-app:latest --load .
+
 run:
 	docker-compose up
 
