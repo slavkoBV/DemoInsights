@@ -30,4 +30,4 @@ To run it, you have to have AWS account
 `docker push <AWSAccountID>.dkr.ecr.<AWSRegion>.amazonaws.com/<RepoName>:latest`
 8. Specify your AWS Account ID, available subnet and name of the S3 Bucket to create (name should be unique across AWS)
 9. Deploy APP to ECS/Fargate `sh cf-ecs.deploy.sh` and wait until all resources will be ready
-10. Run swagger page [TaskPublicIP]:8000/docs where you can try API
+10. Run swagger page `[TaskPublicIP]:8000/docs` where you can try API
