@@ -22,7 +22,7 @@ To run it, you have to have AWS account
 2. Specify your AWS Account ID and preferred name of the repo in `/insights/cloudformation/ecr/cf-ecr.params.json`
 3. You should be login into AWS CLI
 4. Create AWS ECR repo `sh cf-ecr.deploy.sh` from `/insights/cloudformation/ecr`
-5. Add tag `docker tag insights-app:latest [AWSAccountID].dkr.ecr.[AWSRegion].amazonaws.com/[RepoName]:latest`
+5. Add tag `docker tag demoinsights-app:latest [AWSAccountID].dkr.ecr.[AWSRegion].amazonaws.com/[RepoName]:latest`
 6. Login: 
 `aws ecr get-login-password --region [AwsRegion] | docker login --username AWS --password-stdin [AwsAccountId].dkr.ecr.[AwsRegion].amazonaws.com`
 7. Push image to the repo:
