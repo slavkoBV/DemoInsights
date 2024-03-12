@@ -17,7 +17,7 @@ Resources:
   MyRepository:
     Type: "AWS::ECR::Repository"
     Properties:
-      RepositoryName: !Join ["-", [!Ref PrefixName, "repo"]]
+      RepositoryName: !Join ["-", [!Ref PrefixName, !Ref AWSECRRepoName]]
 
 
 Outputs:
